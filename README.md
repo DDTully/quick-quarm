@@ -1,23 +1,15 @@
 # Quick Quarm EQ
 <h3>About</h3>
-<p>Are you a player on Secret's Project Quarm Everquest server?  Have you ever wanted to load up your own PQ server for personal use or to play with friends?  Are you a developer in the PQ universe and want to test out patches, make game changes, or just verify mechanics?  It sounds like Quick Quarm might be the tool for you.
 
-<p>If you want to try an easy to deploy, containerize version of Project Quarm, I encourage you to check out EQMacDocker.  It works great and it's simply to use.
-
-<p>However, if you're doing Project Quarm development, I would would say the docker based system will add some overhead whenever you make a minor code change.  Rebuilding all of the docker images means starting from scratch.<br><ins>Quick Quarm only rebuilds the affected parts of the code</ins>.  
-<p>I also wanted a system I could stop and start services easily after making changes.  With the docker platform, there's atomic processes running in containers that have to be managed discretely instead of using systemd to control service dependencies on a single host.<br><ins>Quick Quarm performs host control over ordered service starts from a unified systemd process and starts when the host is brought up automatically</ins>.  
-
-<p>Quick Quarm does require that you have a persistent host.  I think this solution fits the needs of most people who just want a quick Quarm server to play or seasoned developers who want to dive into the code and give back to the community.
-
-<h3>Notes</h3>
-
+Adapted from https://github.com/ryhoneyman/quick-quarm to use the TAKP repos
 
 <h3>Instructions</h3>
 <ul>
-  <li>Create an Ubuntu 22.04 LTS WSL2, VM or persistent container (such as LXC).  <i>[have not tested other OSs, WSL2 required several modifications to work]</i>
+  <li>Install Ubuntu 22.04 or later in a VM or on metal, I don't care, don't use WSL2, or try to run this on a pregnancy test.</i>
   <li>Install with any user that has sudo privilege.
-  <li>Clone this repo to the directory of your choosing: <b>git clone https://github.com/ryhoneyman/quick-quarm.git</b>
+  <li>Clone this repo to the directory of your choosing: <b>git clone https://github.com/DDTully/quick-quarm.git</b>
   <li>Change to the quick-quarm repo directory and run <b>sudo ./scripts/setup</b>
+  <li>You will need the TAKP client (not quarm) to play</li>
 </ul>
 
 <h4>Configuration</h4>
@@ -27,12 +19,12 @@ user@host:~/quick-quarm$ sudo ./scripts/setup
 Detected /home/user/quick-quarm as Quick Quarm home (user: user)
 
 The defaults are a great starting point, so it's safe to accept them as is to get up and running.
-However, if you have a cloned repo of SecretsOTheP/EQMacEmu that you are using for development, feel free to use that instead.
+However, if you have a cloned repo of EQMacEmu/Server that you are using for development, feel free to use that instead.
 
 If you are using your own repo, make sure you've setup your git SSH key, and git username/email BEFORE continuing.
 
 Install user [user]:
-EQMacEmu repository [https://github.com/SecretsOTheP/EQMacEmu.git]:
+EQMacEmu repository [https://github.com/EQMacEmu/Server.git]:
 Database host [localhost]:
 Database name [quarm]:
 Database username [quarm]:
@@ -56,10 +48,9 @@ Beginning setup:
   [DATABASE] Setup database and tables...
      [MYSQL] Importing: quarm < /home/rhoneyman/quick-quarm/db/login_tables_*.sql
      [MYSQL] Importing: quarm < /home/rhoneyman/quick-quarm/db/player_tables_*.sql
-     [MYSQL] Importing: quarm < /home/rhoneyman/quick-quarm/db/quarm_*.sql
+     [MYSQL] Importing: quarm < /home/rhoneyman/quick-quarm/db/alkabor_*.sql
      [MYSQL] Importing: quarm < /home/rhoneyman/quick-quarm/db/data_tables_*.sql
      [MYSQL] Importing: quarm < /home/rhoneyman/quick-quarm/source/EQMacEmu/loginserver/login_util/tblloginserversettings.sql
-     [MYSQL] Importing: quarm < /home/rhoneyman/quick-quarm/source/EQMacEmu/loginserver/login_util/updates/2023_07_27_tblLoginServerAccounts.sql
      [MYSQL] Importing: quarm < /home/rhoneyman/quick-quarm/files/update_settings.sql
      [BUILD] Generating make files...
      [BUILD] Starting build with X threads... (this may take some time for the initial build)
