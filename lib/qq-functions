@@ -6,7 +6,7 @@ export ENVFILE="$QQDIR/etc/.env"
 export MYSQLBIN="/usr/bin/mysql"
 
 # Defaults
-export DEFAULT_SERVERREPO='https://github.com/SecretsOTheP/EQMacEmu.git'
+export DEFAULT_SERVERREPO='https://github.com/EQMacEmu/Server.git'
 export DEFAULT_DBHOST='localhost'
 export DEFAULT_DBWORD='quarm'
 export DEFAULT_HOSTIP=$(hostname -I | sed -z 's/[[:space:]]//')

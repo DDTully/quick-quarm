@@ -40,7 +40,7 @@ fi
 
 if [ ! -d "$SOURCEDIR/quests" ]; then 
     log "SOURCE" "Cloning quests repo..."
-    exec_cmd_as $QQUSER "git clone https://github.com/SecretsOTheP/quests.git quests 2>/dev/null"
+    exec_cmd_as $QQUSER "git clone https://github.com/EQMacEmu/quests.git quests 2>/dev/null"
 fi
 
 if [ ! -d "$SOURCEDIR/Maps" ]; then 
