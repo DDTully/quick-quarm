@@ -51,7 +51,7 @@ printf "
 Detected $QQDIR as Quick Quarm home (user: $QQUSER)
 
 The defaults are a great starting point, so it's safe to accept them as is to get up and running.
-However, if you have a cloned repo of SecretsOTheP/EQMacEmu that you are using for development, feel free to use that instead.
+However, if you have a cloned repo of EQMacEmu/Server that you are using for development, feel free to use that instead.
 
 If you are using your own repo, make sure you've setup your git SSH key, and git username/email BEFORE continuing.
 
@@ -122,9 +122,9 @@ if [[ "$PUBLIC" =~ [Yy] ]]; then
 fi
 
 printf "
- * New users: Download the TAKP v2.2 Client and the associated PQ package zip file from PQ Discord #server-files
+ * New users: Download the TAKP v2.2 Client
  * Existing users: Copy your existing TAKP folder to another separate folder from your normal PQ install.
- * Edit the file eqhost.txt file and change loginserver.takproject.net:6000 to 192.168.1.100:6000
+ * Edit the file eqhost.txt file and change loginserver.takproject.net:6000 to 192.168.1.100:6000 (or whatever address)
  * Start your client (run as Administrator, and set compatibility options if needed)
  * Login as whatever username/password you want to use (this will fail and is expected).  Click Ok, and hit [ENTER] again.
  * You should see your Quick Quarm EQ server in the list: select it, create a character, and enter the world.
