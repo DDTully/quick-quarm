@@ -58,14 +58,14 @@ If you are using your own repo, make sure you've setup your git SSH key, and git
 "
 
 # Obtain user input variables, supplying the current variables as default options
-QQUSER=$(read_input "Install user" "$QQUSER")
-SERVERREPO=$(read_input "EQMacEmu repository" "$SERVERREPO")
-DBHOST=$(read_input "Database host" "$DBHOST")
-DBNAME=$(read_input "Database name" "$DBNAME")
-DBUSER=$(read_input "Database username" "$DBUSER")
-DBPASS=$(read_input "Database password" "$DBPASS")
+QQUSER=$QQUSER
+SERVERREPO=$SERVERREPO
+DBHOST="localhost"
+DBNAME="quarm"
+DBUSER="quarm"
+DBPASS="quarm"
 HOSTIP=$(read_input "Host address" "$HOSTIP")
-PUBLIC=$(read_input "Public server (y/N)" "$PUBLIC")
+PUBLIC="n"
 
 if [[ "$PUBLIC" =~ [Yy] ]]; then 
     PUBLICIP=$(read_input "Public address" "$PUBLICIP")
