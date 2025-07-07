@@ -34,8 +34,9 @@ mysql_import_as $QQUSER "$DBDIR/player_tables_*.sql"
 mysql_import_as $QQUSER "$DBDIR/alkabor_*.sql"
 mysql_import_as $QQUSER "$DBDIR/data_tables_*.sql"
 mysql_import_as $QQUSER "$SERVERDIR/loginserver/login_util/tblloginserversettings.sql"
-# mysql_import_as $QQUSER "$SERVERDIR/loginserver/login_util/updates/2023_07_27_tblLoginServerAccounts.sql"
 mysql_import_as $QQUSER "$FILESDIR/update_quarm.sql"
+mysql_import_as $QQUSER "$SERVERDIR/utils/sql/git/required/2025_05_26_Add_Detail_Player_Event_Logging.sql"
+# mysql_import_as $QQUSER "$SERVERDIR/loginserver/login_util/updates/2023_07_27_tblLoginServerAccounts.sql"
 log "DATABASE" "$DBNAME ready."
 
 popd
